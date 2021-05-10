@@ -1,0 +1,22 @@
+.GUI_MenuBar{
+	background-color: black;
+	color: white;
+	display: inline-block;
+}
+.GUI_MenuBarOption{
+	background-color: black;
+	color: white;
+	font-size: 26px;
+	font-family: Arial;
+	padding: 10px;
+	float: left;
+	list-style: none;
+}
+.GUI_MenuBarOption:hover{
+	background-color: darkgray;
+}
+.GUI_MenuBarLogo{
+	width: 100%;
+	height: 100%;
+	float: left;
+}
