@@ -11,7 +11,7 @@
 	</head>
 	<body>
 		<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-		    <a class="navbar-brand" href="#">Develope Park</a>
+		    <a class="navbar-brand" href="https://a042xd.github.io/index.html">Develope Park</a>
 		    <ul class="navbar-nav">
 		    	<li class="nav-item dropdown">
 		      		<a class="nav-link dropdown-toggle" href="a042xd.github.io" id="navbardrop" data-toggle="dropdown">
@@ -41,7 +41,38 @@
 		</nav>
 		<br>
 		<div class="container">
-			<h1>HTML 5</h1>
+			<div class="row">
+				<div class="col-8">
+					<h1>HTML 5</h1>
+					<iframe id="doc" src=".\Docs\Doc_Introduction.html" style="border:solid gray 0px;">	
+					</iframe>
+				</div>
+				<div class="col-4">
+					<ul class="nav nav-pills flex-column">
+						<li class="nav-item">
+							<div class="nav-link" style="font-style:bold;">
+								基础
+							</div>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#" onclick="ChangeDoc('.\\Docs\\Doc_Introduction.html');">
+								介绍
+							</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#" onclick="ChangeDoc('.\\Docs\\Doc_HelloWorld.html');">
+								第一个程序 Hello, world
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
 		</div>
+		<script type="text/javascript">
+			function ChangeDoc(Docname){
+				const ref = document.getElementById("doc");
+				doc.src = Docname;
+			}
+		</script>
 	</body>
 </html>
