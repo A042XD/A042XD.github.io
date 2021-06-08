@@ -1,0 +1,24 @@
+.WNavList{margin: 0px;padding: 0px;list-style-type: none;overflow: hidden;}
+.WNavItem{padding: 10px;text-align: center;}
+.WNavLink{display: block;text-decoration: none;transition-duration: 0.4s;border-radius: 10px;}
+.WNavHorizontalLeft{float: left;}
+.WNavHorizontalRight{float: right;}
+.WNavHorizontalHintContent{display: none;writing-mode: horizontal-tb;transition-duration: 0.4s;}
+.WNavHorizontalHint:hover .WNavHorizontalHintContent{display: block;}
+.WText{margin: 30px;}
+.WTextTitleS1{font-size: 50px;}
+.WTextTitleS2{font-size: 44px;}
+.WTextTitleS3{font-size: 38px;}
+.WTextTitleS4{font-size: 32px;}
+.WTextTitleS5{font-size: 26px;}
+.WTextTitleS6{font-size: 20px;}
+.WTextBRed{background-color: #ff000040;color: #ff0000;border-radius: 6px;padding: 10px;font-style: bold;}
+.WTextBYellow{background-color: #ffff0040;color: #ffB400;border-radius: 6px;padding: 10px;font-style: bold;}
+.WTextParagraph{padding: 20px;}
+.WIntergrateTextSizeSuperLarge{font-size: 60px;}
+.WIntergrateTextSizeLarge{font-size: 53px;}
+.WIntergrateTextSizeBig{font-size: 45px;}
+.WIntergrateTextSizeNormal{font-size: 30px;}
+.WIntergrateTextSizeLittle{font-size: 22px;}
+.WIntergrateTextSizeSmall{font-size: 14px;}
+.WIntergrateTextSizeSuperSmall{font-size: 6px;}
