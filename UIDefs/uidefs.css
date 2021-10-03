@@ -1,0 +1,21 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	font-family: Consolas;
+}
+.flex-container{
+	display: flex;
+}
+.flex-item{
+	display: block;
+	width: 20%;
+	margin: 2.5%;
+}
+.flex-item-intro{
+	color: #c5c5c5;
+	margin-left: 2%;
+}
+.href{
+	text-decoration: none;
+	color: #409eff;
+}
