@@ -1,38 +1,26 @@
 *{
-	padding: 0px;
 	margin: 0px;
+	padding: 0px;
+}
+html{
+	height: 100%;
 }
 body{
+	background: #E6E6EF;
 	height: 100vh;
-	background-color: #1d1c1c;
 	display: flex;
-	filter: blur(5px);
+	justify-content: center;
+	align-items: center;
 }
-.glow{
-	color: white;
-	font-weight: bolder;
-	font-size: 70px;
-	margin: auto;
-	position: relative;
+.blogs-wrap{
+	border-radius: 15px;
+	border: solid 1px gray;
 }
-.glow::before{
-	content: 'Hello, World';
-	position: absolute;
-	color: #06ee99;
-	left: 0;
-	top: 0;
-	width: 50px;
-	white-space: nowrap;
-	border-right: 5px solid #06ee99;
-	overflow: hidden;
-	animation: animate 2s linear infinite;
-	filter: drop-shadow(0 0 50px #06ee99);
+.blogs-wrap ul li{
+	list-style-type: none;
+	padding: 5px;
 }
-@Keyframes animate{
-	0%{
-		width: 0;
-	}
-	100%{
-		width: 100%;
-	}
+.blogs-wrap ul li a{
+	font-size: 20px;
+	padding: 5px;
 }
