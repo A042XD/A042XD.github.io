@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Xaeric's Website</title>
+        <link rel="stylesheet" type="text/css" href="../base.css">
+        <link href="https://cdn.jsdelivr.net/npm/katex@0.17.0/dist/katex.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <div>
+            <div class="nav-container">
+                <h1>
+                    <a href="../index.html" title="">
+                        Xaeric
+                    </a>
+                </h1>
+            </div>
+            <div id="blog-content">
+                <p id="blog-text">
+                    
+                </p>
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.17.0/dist/katex.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/marked/lib/marked.umd.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            const urlParams = new URLSearchParams(window.location.search);
+            const doc = urlParams.get('doc');
+
+            const path = './blog_md/' + doc;
+            console.log(path);
+            fetch('./blog_md/' + doc)
+            .then(res => res.text())
+            .then(md => {
+                // console.log(md);
+                const cc = document.getElementById("blog-text");
+
+                cc.innerHTML = marked.parse(md);
+                renderMathInElement(cc, {
+                    delimiters: [
+                        {left: '$$', right: '$$', display: true},
+                        {left: '$', right: '$', display: false}
+                    ],
+                    throwOnError: false
+                });
+            });
+        </script>
+    </body>
+</html>
