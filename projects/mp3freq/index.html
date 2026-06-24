@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+	</head>
+	<body>
+		<h1>
+			Mp3 Frequency Visualizer
+		</h1>
+		<canvas id="freqCanvas" width="800" height=400>
+			
+		</canvas>
+		<button onclick="resume()">Click me</button>
+		<script type="text/javascript">
+			const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+			async function loadAudio(url){
+				const response = await fetch(url);
+				const arrayBuffer = await response.arrayBuffer();
+				const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+				return audioBuffer;
+			}
+			async function setupAudio(url){
+				const audioBuffer = await loadAudio(url);
+				const source = audioContext.createBufferSource();
+				source.buffer = audioBuffer;
+				return source;
+			}
+			async function main(){
+				const source = await setupAudio('./test.mp3');
+				const analyser = audioContext.createAnalyser();
+				source.connect(analyser);
+				analyser.connect(audioContext.destination);
+				source.start(0);
+				audioContext.resume();
+
+				const frequencyData = new Uint8Array(analyser.frequencyBinCount);
+				const canvas = document.getElementById('freqCanvas');
+				const canvasContext = canvas.getContext('2d');
+
+				function drawFrequencyData(){
+					requestAnimationFrame(drawFrequencyData);
+					analyser.getByteFrequencyData(frequencyData);
+					canvasContext.clearRect(0, 0, canvas.width, canvas.height);
+					canvas.fillStyle = 'rgb(0,0,0)';
+					canvasContext.fillRect(0, 0, canvas.width, canvas.height);
+
+					const barWidth = (canvas.width / frequencyData.length) * 2.5;
+					let barHeight;
+					let x = 0;
+					for(let i = 0; i < frequencyData.length; i++){
+						barHeight = frequencyData[i] / 2;
+						canvasContext.fillStyle = 'rgb(' + (barHeight + 100) + ',50,50)';
+						canvasContext.fillRect(x, canvas.height - barHeight / 2, barWidth, barHeight);
+						x += barWidth + 1;
+					}
+				}
+				drawFrequencyData();
+			}
+			function resume(){
+				
+			}
+
+			main();
+			// drawFrequencyData();
+		</script>
+	</body>	
+</html>
