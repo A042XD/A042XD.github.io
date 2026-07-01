@@ -32,11 +32,14 @@
                 'mont_c2.md',
                 'mont_c3.md',
                 'mont_c4.md',
-                'AMC12A2025review.md'
+                'AMC12A2025review.md',
+                'a.md',
+                'AMC12A2024review.md'
             ];
             const urlParams = new URLSearchParams(window.location.search);
             const doc = urlParams.get('doc');
             if(!blog_names.includes(doc)){
+                console.log('Doc not found.');
                 location.href="..";
             }
             else{
